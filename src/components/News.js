@@ -13,19 +13,18 @@ export class News extends Component {
     }
 
     async componentDidMount(){
-      
       let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=53ba08424a8148c49de4f2d452d4dc8b&page=1&pageSize=${this.props.pageSize}`;
       this.setState({loading: true});
       let data = await fetch(url);
       let parsedData = await data.json();
       this.setState({
-                      articles: parsedData.articles, 
-                      totalResults: parsedData.totalResults,
-                      loading: false});
+        articles: parsedData.articles, 
+        totalResults: parsedData.totalResults,
+        loading: false
+      });
     }
 
     handlePrevClick = async() => {
-      
       let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=53ba08424a8148c49de4f2d452d4dc8b&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
       this.setState({loading: true});
       let data = await fetch(url);
