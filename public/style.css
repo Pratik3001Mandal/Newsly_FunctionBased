@@ -5,3 +5,7 @@
 .disabledCss{
     opacity: 0.7;
 }
+.imageSize{
+    width: 38px;
+    border: 1px solid;
+}
