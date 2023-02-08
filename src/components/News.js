@@ -5,11 +5,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const News = (props) => {
 
-      const [articles, setArticles] = useState([]);
-      const [loading, setLoading] = useState(true);
-      const [page, setPage] = useState(1);
-      const [totalResults, setTotalResults] = useState(0);
-      //document.title = `${capitalizeFunction(props.category)} | Newsly`;
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [totalResults, setTotalResults] = useState(0);
 
     const capitalizeFunction = (value) => {
       const finalString = value.charAt(0).toUpperCase() + value.slice(1);
@@ -26,6 +25,7 @@ const News = (props) => {
     }
 
     useEffect(() => {
+      document.title = `${capitalizeFunction(props.category)} | Newsly`;
       updatedNews();
     },[]);
 
