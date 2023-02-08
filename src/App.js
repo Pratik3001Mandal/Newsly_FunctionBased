@@ -14,7 +14,6 @@ import Footer from './components/Footer';
 export default class App extends Component {
   pageSize = 5;
   apiKey = process.env.REACT_APP_NEWSLY_APIKEY;
-  debbuger;
   render() {
     return (
       <div>
