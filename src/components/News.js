@@ -20,7 +20,7 @@ export class News extends Component {
     }
 
     async updatedNews(){
-      const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=53ba08424a8148c49de4f2d452d4dc8b&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+      const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
       let data = await fetch(url);
       let parsedData = await data.json();
       this.setState({
@@ -48,7 +48,7 @@ export class News extends Component {
   render() {
     return (  
       <>
-        <h2 className='text-center'>News - Top {this.capitalizeFunction(this.props.category)} Headlines</h2>
+        <h2 className='text-center my-3'>News - Top {this.capitalizeFunction(this.props.category)} Headlines</h2>
         <InfiniteScroll
               dataLength={this.state.articles.length}
               next={this.fetchMoreData}
